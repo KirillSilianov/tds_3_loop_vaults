@@ -7,8 +7,10 @@
 * В файл `deploy/inventory.yml` добавлены адрес и порт SSH целевой виртуальной машины
 * На родительской машине (или на ВМ от которой будет происходить управление)
   * установлен Ansible
+  * добавлен файл vault-pass.txt в корень проекта с паролем от зашифрованного контейнера с секретами
 
 ## Запуск ##
-```console
+```console 
 ansible-playbook ./deploy/deploy.yml -i ./deploy/inventory.yml
---vault-password-file ./vault-pass.txt```
+--vault-password-file ./vault-pass.txt
+```
